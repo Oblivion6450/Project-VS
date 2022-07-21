@@ -1,46 +1,34 @@
-* {box-sizing: border-box;}
-
-body{
+* {
+    box-sizing: border-box;
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
-sidebar-top{
+.sidebar-top-container {
     width: 100%;
     height: 70px;
-    top: 1px;
-    position: absolute;
     background-color: #141414;
     box-shadow: 0px 4px 20px rgba(53, 53, 53, 0.18);
 }
 
-sidebar-lower{
+.sidebar-lower-container {
     width: 100%;
     height: 70px;
-    top: 160px;
-    position: absolute;
     background-color: #141414;
     box-shadow: 0px 4px 20px rgba(53, 53, 53, 0.18);
 }
 
-.sidebar-top{
-    width: 1584px;
-    height: 71px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.sidebar-lower{
-    width: 83%;
+.sidebar {
+    width: 82.5%;
     height: 70px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white;
 }
 
-.sidebar-top-left{
+.sidebar-top-left {
     width: 537px;
     height: 70px;
     display: flex;
@@ -48,7 +36,7 @@ sidebar-lower{
     align-items: center;
 }
 
-.sidebar-top-right{
+.sidebar-top-right {
     width: 200px;
     height: 70px;
     display: flex;
@@ -56,19 +44,17 @@ sidebar-lower{
     align-items: center;
 }
 
-.sidebar-about-us, .sidebar-payment, .sidebar-news, .sidebar-contacts, .sidebar-cabinet,
-.sidebar-lower-directory, .sidebar-lower-new, .sidebar-lower-thumbnail, .sidebar-lower-thumbnailSmall, .sidebar-lower-old{
+.sidebar-lower {
     cursor: pointer;
 }
 
-header{
+header {
     height: 90px;
     width: 100%;
-    top: 71px;
-    position: absolute;
     background-color: #ECF1F2;
 }
-.header{
+
+.header {
     width: 1584px;
     min-height: 90px;
     margin: auto;
@@ -77,13 +63,13 @@ header{
     align-items: center;
 }
 
-.header-left{
+.header-left {
     display: flex;
     justify-content: space-between;
     width: 725px;
 }
 
-.search{ 
+.search {
     padding: 0 10px;
     width: 400px;
     border: 1px solid #040404;
@@ -94,19 +80,16 @@ header{
 
 }
 
-.input{
+.input {
     border: none;
     outline: none;
     width: 377px;
     height: 41px;
-    vertical-align: middle;
     background-color: #ECF1F2;
-    content: #000000;
-    font-family: Montserrat;
     font-size: 17px;
 }
 
-.button{
+.button {
     width: 20px;
     height: 20px;
     border: none;
@@ -117,7 +100,7 @@ header{
     margin-top: 3px;
 }
 
-.header-right{
+.header-right {
     width: 191px;
     height: 45px;
     display: flex;
@@ -125,12 +108,12 @@ header{
     align-items: center;
 }
 
-.cart{
+.cart {
     width: 31px;
     height: 32px;
 }
 
-.cart-order{
+.cart-order {
     color: #E8AA31;
     cursor: pointer;
 }
