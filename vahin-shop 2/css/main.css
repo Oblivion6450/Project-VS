@@ -1,0 +1,136 @@
+* {box-sizing: border-box;}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+sidebar-top{
+    width: 100%;
+    height: 70px;
+    top: 1px;
+    position: absolute;
+    background-color: #141414;
+    box-shadow: 0px 4px 20px rgba(53, 53, 53, 0.18);
+}
+
+sidebar-lower{
+    width: 100%;
+    height: 70px;
+    top: 160px;
+    position: absolute;
+    background-color: #141414;
+    box-shadow: 0px 4px 20px rgba(53, 53, 53, 0.18);
+}
+
+.sidebar-top{
+    width: 1584px;
+    height: 71px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-lower{
+    width: 83%;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-top-left{
+    width: 537px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-top-right{
+    width: 200px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-about-us, .sidebar-payment, .sidebar-news, .sidebar-contacts, .sidebar-cabinet,
+.sidebar-lower-directory, .sidebar-lower-new, .sidebar-lower-thumbnail, .sidebar-lower-thumbnailSmall, .sidebar-lower-old{
+    cursor: pointer;
+}
+
+header{
+    height: 90px;
+    width: 100%;
+    top: 71px;
+    position: absolute;
+    background-color: #ECF1F2;
+}
+.header{
+    width: 1584px;
+    min-height: 90px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left{
+    display: flex;
+    justify-content: space-between;
+    width: 725px;
+}
+
+.search{ 
+    padding: 0 10px;
+    width: 400px;
+    border: 1px solid #040404;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.input{
+    border: none;
+    outline: none;
+    width: 377px;
+    height: 41px;
+    vertical-align: middle;
+    background-color: #ECF1F2;
+    content: #000000;
+    font-family: Montserrat;
+    font-size: 17px;
+}
+
+.button{
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: url(../img/search.svg) no-repeat;
+    background-color: #ECF1F2;
+    background-size: 100%;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.header-right{
+    width: 191px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart{
+    width: 31px;
+    height: 32px;
+}
+
+.cart-order{
+    color: #E8AA31;
+    cursor: pointer;
+}
