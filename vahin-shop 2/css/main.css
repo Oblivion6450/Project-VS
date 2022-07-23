@@ -122,3 +122,18 @@ header {
 .header-cart-order {
     color: #E8AA31;
 }
+
+.lowerMenu li {
+    position: relative;
+}
+
+.lowerMenuHidden {
+    position: absolute;
+    top: 50px;
+    opacity: 0;
+    transition: 0.25s;
+}
+
+.lowerMenu li:hover .lowerMenuHidden {
+    opacity: 1;
+}
