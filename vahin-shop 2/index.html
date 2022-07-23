@@ -15,16 +15,16 @@
 <div class="sidebar-top-container">
     <div class="sidebar">
         <div class="sidebar-top-left" style="color: white;">
-            <div class="sidebar-about-us">О нас</div>
-            <div class="sidebar-payment">Оплата и доставка</div>
-            <div class="sidebar-news">Новости</div>
-            <div class="sidebar-contacts">Контакты</div>
+            <div class="sidebar-top-content">О нас</div>
+            <div class="sidebar-top-content">Оплата и доставка</div>
+            <div class="sidebar-top-content">Новости</div>
+            <div class="sidebar-top-content">Контакты</div>
         </div>
         <div class="sidebar-top-right">
             <div class="sidebar-top-icon">
                 <img src="./img/cabinet_logo.png" alt="">
             </div>
-            <div class="sidebar-cabinet">Личный кабинет</div>
+            <div class="sidebar-top-content">Личный кабинет</div>
         </div>
     </div>
 </div>
@@ -32,35 +32,46 @@
 <header>
     <div class="header">
         <div class="header-left">
-            <div class="logo">
+            <div class="header-left-logo">
                 <img src="./img/Logo.jpg" alt="Логотип сайта">
             </div>
-            <div class="search">
-                <input class="input" type="text" placeholder="Поиск">
-                <button class="button" type="submit"></button>
+            <div class="header-left-search">
+                <input class="header-left-nput" type="text" placeholder="Поиск">
+                <button class="header-left-button" type="submit"></button>
             </div>
         </div>
         <div class="header-right">
-            <div class="cart">
+            <div class="header-cart">
                 <img src="./img/cart.png" alt="Корзина">
             </div>
-            <div class="cart-inform">
-                <div class="cart-basket">0 р.</div>
-                <div class="cart-order">Оформить заказ</div>
+            <div class="header-cart-container">
+                <div class="header-cart-basket">0 р.</div>
+                <div class="header-cart-order">Оформить заказ</div>
             </div>
         </div>
     </div>
 </header>
 
-<div class="sidebar-lower-container">
-    <div class="sidebar">
-        <div class="sidebar-lower">Каталог продукции</div>
-        <div class="sidebar-lower">Новинки</div>
-        <div class="sidebar-lower">Военная миниатюра 54-60мм</div>
-        <div class="sidebar-lower">Миниатюра 42-45мм</div>
-        <div class="sidebar-lower">Снятые с производства</div>
-    </div>
-</div>
+<nav class="sidebar-lower">
+    <ul class="lowerMenu">
+        <li><a href="">Каталог</a></li>
+        <li><a href="">Новинки</a></li>
+        <li><a href="">Военная миниатюра 54-60мм</a>
+            <ul class="lowerMenuHidden">
+                <li><a href="">Пешие наборы</a></li>
+                <li><a href="">Лошади</a></li>
+                <li><a href="">Всадники</a></li>
+            </ul>
+        </li>
+        <li><a href="">Миниатюра 42-45мм</a>
+            <ul class="lowerMenuHidden">
+                <li><a href="">Лошади и динозавры</a></li>
+                <li><a href="">Всадники</a></li>
+            </ul>
+        </li>
+        <li><a href="">Снятые с производства</a></li>
+    </ul>
+</nav>
 </body>
 
 </html>
