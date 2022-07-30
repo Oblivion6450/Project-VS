@@ -9,18 +9,7 @@
     <link href="./css/main.css" type='text/css' rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/simple-adaptive-slider.css">
-    <script defer src="./js/simple-adaptive-slider.js"></script>
-    <script>
-         document.addEventListener('DOMContentLoaded', () => {
-            // инициализация слайдера
-            new ItcSimpleSlider('.itcss', {
-                loop: true,
-                autoplay: false,
-                interval: 5000,
-                swipe: true,
-            });
-        });
-    </script>
+
 </head>
 
 <body>
@@ -88,6 +77,13 @@
 
 <!-- Разметка слайдера (html код) -->
 
-</body>
+<div class="slide">1</div>
+<div class="slide">2</div>
+<div class="slide">3</div>
+<div class="slide">4</div>
+<button class="next">next</button>
+<button class="prev">prev</button>
 
+</body>
+<script src="js/main.js"></script>
 </html>
