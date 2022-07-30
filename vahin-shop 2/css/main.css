@@ -162,7 +162,6 @@ header {
     bottom: 0;
     left: 50%;
     display: block;
-    background: none repeat scroll 0 0 transparent;
     top: 38px;
     height: 2px;
     width: 0;
@@ -198,4 +197,8 @@ header {
 
 .lowerMenu li:hover .lowerMenuHidden {
     opacity: 1;
+}
+
+.lowerMenuHidden {
+    width: 100%;
 }
