@@ -8,86 +8,95 @@
     <title>vahin-shop</title>
     <link href="./css/main.css" type='text/css' rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <script defer src="./js/main.js"></script>
     <link rel="stylesheet" href="./css/simple-adaptive-slider.css">
     <script defer src="./js/simple-adaptive-slider.js"></script>
-    <script>
-         document.addEventListener('DOMContentLoaded', () => {
-            // инициализация слайдера
-            new ItcSimpleSlider('.itcss', {
-                loop: true,
-                autoplay: false,
-                interval: 5000,
-                swipe: true,
-            });
-        });
-    </script>
 </head>
 
 <body>
 
-<div class="sidebar-top-container">
-    <div class="sidebar">
-        <div class="sidebar-top-left" style="color: white;">
-            <div class="sidebar-top-content">О нас</div>
-            <div class="sidebar-top-content">Оплата и доставка</div>
-            <div class="sidebar-top-content">Новости</div>
-            <div class="sidebar-top-content">Контакты</div>
-        </div>
-        <div class="sidebar-top-right">
-            <div class="sidebar-top-icon">
-                <img src="./img/cabinet_logo.png" alt="">
+    <div class="sidebar-top-container">
+        <div class="sidebar">
+            <div class="sidebar-top-left" style="color: white;">
+                <div class="sidebar-top-content">О нас</div>
+                <div class="sidebar-top-content">Оплата и доставка</div>
+                <div class="sidebar-top-content">Новости</div>
+                <div class="sidebar-top-content">Контакты</div>
             </div>
-            <div class="sidebar-top-content">Личный кабинет</div>
-        </div>
-    </div>
-</div>
-
-<header>
-    <div class="header">
-        <div class="header-left">
-            <div class="header-left-logo">
-                <img src="./img/Logo.jpg" alt="Логотип сайта">
-            </div>
-            <div class="header-left-search">
-                <input class="header-left-nput" type="text" placeholder="Поиск">
-                <button class="header-left-button" type="submit"></button>
-            </div>
-        </div>
-        <div class="header-right">
-            <div class="header-cart">
-                <img src="./img/cart.png" alt="Корзина">
-            </div>
-            <div class="header-cart-container">
-                <div class="header-cart-basket">0 р.</div>
-                <div class="header-cart-order">Оформить заказ</div>
+            <div class="sidebar-top-right">
+                <div class="sidebar-top-icon">
+                    <img src="./img/cabinet_logo.png" alt="">
+                </div>
+                <div class="sidebar-top-content">Личный кабинет</div>
             </div>
         </div>
     </div>
-</header>
 
-<nav class="sidebar-lower">
-    <ul class="lowerMenu">
-        <li><a class="lowerMenu_button" href="">Каталог</a></li>
-        <li><a class="lowerMenu_button" href="https://vahin-shop.com/product-category/новинки/">Новинки</a></li>
-        <li><a class="lowerMenu_button" href="https://vahin-shop.com/product-category/военная-миниатюра-54-60мм-1-32/">Военная миниатюра 54-60мм</a>
-            <ul class="lowerMenuHidden">
-                <li><a href="https://vahin-shop.com/product-category/военная-миниатюра-54-60мм-1-32/пешие-наборы/">Пешие наборы</a></li>
-                <li><a href="https://vahin-shop.com/product-category/военная-миниатюра-54-60мм-1-32/конные-фигуры/">Лошади</a></li>
-                <li><a href="https://vahin-shop.com/product-category/лошади-для-всадников-54-60мм/">Всадники</a></li>
-            </ul>
-        </li>
-        <li><a class="lowerMenu_button" href="https://vahin-shop.com/product-category/фигуры-42-45мм/">Миниатюра 42-45мм</a>
-            <ul class="lowerMenuHidden">
-                <li><a  href="https://vahin-shop.com/product-category/фигуры-42-45мм/лошади-и-динозавры-под-42-45мм/">Лошади и динозавры</a></li>
-                <li><a href="https://vahin-shop.com/product-category/фигуры-42-45мм/конные-фигуры-42-45мм/">Всадники</a></li>
-            </ul>
-        </li>
-        <li><a class="lowerMenu_button" href="https://vahin-shop.com/product-category/non/">Снятые с производства</a></li>
-    </ul>
-</nav>
+    <header>
+        <div class="header">
+            <div class="header-left">
+                <div class="header-left-logo">
+                    <img src="./img/Logo.jpg" alt="Логотип сайта">
+                </div>
+                <div class="header-left-search">
+                    <input class="header-left-nput" type="text" placeholder="Поиск">
+                    <button class="header-left-button" type="submit"></button>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="header-cart">
+                    <img src="./img/cart.png" alt="Корзина">
+                </div>
+                <div class="header-cart-container">
+                    <div class="header-cart-basket">0 р.</div>
+                    <div class="header-cart-order">Оформить заказ</div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<!-- Разметка слайдера (html код) -->
+    <nav class="sidebar-lower">
+        <ul class="lowerMenu">
+            <li><a class="lowerMenu_button" href="">Каталог</a></li>
+            <li><a class="lowerMenu_button" href="https://vahin-shop.com/product-category/новинки/">Новинки</a></li>
+            <li><a class="lowerMenu_button"
+                    href="https://vahin-shop.com/product-category/военная-миниатюра-54-60мм-1-32/">Военная миниатюра
+                    54-60мм</a>
+                <ul class="lowerMenuHidden">
+                    <li><a href="https://vahin-shop.com/product-category/военная-миниатюра-54-60мм-1-32/пешие-наборы/">Пешие
+                            наборы</a></li>
+                    <li><a
+                            href="https://vahin-shop.com/product-category/военная-миниатюра-54-60мм-1-32/конные-фигуры/">Лошади</a>
+                    </li>
+                    <li><a href="https://vahin-shop.com/product-category/лошади-для-всадников-54-60мм/">Всадники</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="lowerMenu_button" href="https://vahin-shop.com/product-category/фигуры-42-45мм/">Миниатюра
+                    42-45мм</a>
+                <ul class="lowerMenuHidden">
+                    <li><a
+                            href="https://vahin-shop.com/product-category/фигуры-42-45мм/лошади-и-динозавры-под-42-45мм/">Лошади
+                            и динозавры</a></li>
+                    <li><a
+                            href="https://vahin-shop.com/product-category/фигуры-42-45мм/конные-фигуры-42-45мм/">Всадники</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="lowerMenu_button" href="https://vahin-shop.com/product-category/non/">Снятые с
+                    производства</a></li>
+        </ul>
+    </nav>
 
+    <!-- Разметка слайдера (html код) -->
+    <div class="slide_all">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <div class="slide">4</div>
+    </div>
+    <button class="next">туда</button>
+    <button class="prev">сюда</button>
 </body>
 
 </html>
