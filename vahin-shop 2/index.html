@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vahin-shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/main.css" type='text/css' rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <script defer src="./js/main.js"></script>
-    <link rel="stylesheet" href="./css/simple-adaptive-slider.css">
-    <script defer src="./js/simple-adaptive-slider.js"></script>
 </head>
 
 <body>
@@ -89,14 +87,19 @@
     </nav>
 
     <!-- Разметка слайдера (html код) -->
-    <div class="slide_all">
-        <div class="slide">1</div>
-        <div class="slide">2</div>
-        <div class="slide">3</div>
-        <div class="slide">4</div>
+    <div class="slider_container">
+        <div class="slider">
+            <div class="slider_line">
+                <img src="./img/1.jpg" alt="">
+                <img src="./img/2.jpg" alt="">
+                <img src="./img/3.jpg" alt="">
+                <img src="./img/4.jpg" alt="">
+            </div>
+        </div>
+        <button class="slider_prev"><img src="./img/arrow_left.png" alt=""></button>
+        <button class="slider_next"><img src="./img/arrow_right.png" alt=""></button>
     </div>
-    <button class="next">туда</button>
-    <button class="prev">сюда</button>
+    <script defer src="./js/main.js"></script>
 </body>
 
 </html>
