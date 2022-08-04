@@ -1,39 +1,38 @@
-let slides = document.querySelectorAll('.slide');
-
+const images = document.querySelectorAll('.slider .slider_line img');
+const sliderLine = document.querySelector('slider_line');
 let index = 0;
+let width;
 
-let changeSlider = (index) => {
-    slides.forEach((slide, i) => {
-        if (i === index) {
-            slide.style.display = 'block';
-        }
-        else {
-            slide.style.display = 'none';
-        }
-    })
+function init(){
+    console.log('resize');
+    width = document.querySelector('.slider').offsetWidth;
+    sliderLine.style.width = width * images.length +'px';
+    images.forEach(item => {
+        item.style.width = width + 'px';
+        item.style.height = 'auto';
+    });
+    rollSlider();
 }
 
-changeSlider(index)
+window.addEventListener('resize', init);
+init();
 
-let nextSlide = () => {
-    if (index !== slides.length - 1) {
-        index++
-        changeSlider(index);
+document.querySelector('slider_prev').addEventListener('click', function(){
+    index--;
+    if (index < 0){
+        index = images.length - 1;
     }
+    rollSlider();
+});
 
-}
-
-let prevSlide = () => {
-    if (index !== 0) {
-        index--;
-        changeSlider(index);
+document.querySelector('slider_next').addEventListener('click', function(){
+    index++;
+    if (index >= images.length){
+        index = 0;
     }
+    rollSlider();
+});
+
+function rollSlider(){
+    sliderLine.style.transform = 'translate(-'+index*width+ 'px)';
 }
-
-
-
-let nextButton = document.querySelector('.next')
-nextButton.addEventListener('click', nextSlide)
-
-let prevButton = document.querySelector('.prev')
-prevButton.addEventListener('click', prevSlide)
