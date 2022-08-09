@@ -37,20 +37,24 @@ function rollSlider() {
     sliderLine.style.transform = 'translate(-' + index * width + 'px)';
 }
 
-setInterval(function () {
-    rollSlider(index)
-    index++;
-    if (index == 4) {
-        index = 0;
-    }
-}, 5000)
-
-// function slides_number(index) {
-//     var dots = document.querySelectorAll(".dot")
-
-//     for (var index = 0; index < dots.length; index++) {
-//         dots[index].className = dots[index].className.replace("cheked", "");
-
-//         dots[index - 1].className += " cheked";
+// setInterval(function () {
+//     rollSlider(index)
+//     index++;
+//     if (index == 4) {
+//         index = 0;
 //     }
-// }
+// }, 5000)
+
+function slides_number(i) {
+    // var dots = document.querySelectorAll(".dot")
+    // dots[index].className.replace("checked", "");
+    //
+    // for (var i = 0; i < dots.length; i++) {
+    //     if (i !== index) {
+    //         dots[index].className.replace("", "checked");
+    //     }
+    // }
+    // rollSlider(index);
+    index = i;
+    rollSlider()
+}
