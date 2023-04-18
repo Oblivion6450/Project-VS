@@ -22,7 +22,7 @@
                     <button id="plus" onclick="counter(this)"> + </button>
                 </div>
                 <div class="card_full_basket">
-                    <form action= "{% url 'cart:cart_add' product.id %} method="post">
+                    <form action= "{% url 'cart:cart_add' product.id %}" method="post">
                     {{ cart_shop_form }}
                     {% csrf_token %}
                     <button type="submit">В корзину</button>
