@@ -1,0 +1,35 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Products{% endif %}
+{% endblock %}
+{% block content %}
+<div class="card_full_container">
+    <div class="card">
+        <div class="card_full_img">
+            <a href="{{ product.get_absolute_url }}"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/img_null.png' %}{% endif %}" alt="Изображение товара" width="660" height="500"></a></div>
+        <div class="card_full">
+            <div class="card_item">
+                <div class="card_full_name">{{ product.name }}</div>
+                <div class="card_full_category">Категория: <a href="{{ shop_item.category.get_absolute_url }}">{{product.category }}</a></div>
+                <div class="card_full_status">{{ product.available }}</div>
+            </div>
+            <div class="card_full_purchase">
+                <div class="card_full_price">{{ product.price }}₽</div>
+                <div class="card_amount">
+                    <button id="minus" onclick="counter(this)"> - </button>
+                    <input type="number" min="1" max="100" step="1" value="1" id="amountCounter">
+                    <button id="plus" onclick="counter(this)"> + </button>
+                </div>
+                <div class="card_full_basket">
+                    <form action= "{% url 'cart:cart_add' product.id %} method="post">
+                    {{ cart_shop_form }}
+                    {% csrf_token %}
+                    <button type="submit">В корзину</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
