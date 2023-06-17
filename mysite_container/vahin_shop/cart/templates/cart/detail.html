@@ -1,0 +1,29 @@
+{% extends "shop/base.html" %}
+{% block title %}{{name}}{% endblock %}
+
+{% for item in shop %}
+{% with shop=item.shop_item %}
+<div class="card_container">
+    <div class="card_mini">
+        {% if shop_item.img %}
+        <div class="card_mini_img"><a href="{{ item.get_absolute_url }}"><img src="{{ item.img.url }}"
+                    alt="Изображение товара" width="375" height="295"></a></div>
+        {% else %}
+        <div class="card_mini_img"><img src="../../../img/img/img_null.png" alt="" width="375" height="295"></div>
+        {% endif %}
+        <div class="card_mini_name"><a href="{{ item.get_absolute_url }}">{{ shop_item.name }}</a></div>
+        <div class="card_mini_category"><a href="{{ item.category.get_absolute_url }}">{{ shop_item.category }}</a></div>
+        <div class="card_mini_line"></div>
+        <div class="card_mini_purchase">
+            <div class="card_mini_price">{{ shop_item.price }}₽</div>
+            <div class="card_mini_amount">
+                <button id="minus" onclick="counter(this)"> - </button>
+                <input type="number" min="1" max="10000" step="1" value="1" id="amountCounter">
+                <button id="plus" onclick="counter(this)"> + </button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endwith %}
+{% endfor %}

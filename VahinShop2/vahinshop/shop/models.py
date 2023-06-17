@@ -20,12 +20,12 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, related_name='products', on_delete=models.PROTECT, null=True)
+    category = models.ManyToManyField(Category, related_name='products')
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True)
     image = models.ImageField(upload_to='static/img/products/%Y', blank=False)
     description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(max_digits=10, decimal_places=0)
     stock = models.PositiveIntegerField()
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)

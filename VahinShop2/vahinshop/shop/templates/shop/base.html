@@ -8,111 +8,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Vahin-shop{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="{% static 'css/main.css' %}" type='text/css' rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap"
-          rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
 
-<header>
-    <div class="header">
-        <div class="header_logo">
-            <img src="../../../static/img/Logo.jpg" alt="Логотип сайта">
-        </div>
-        <ul class="header_list_container">
-            <li><a class="header_list_button" href="">О нас</a></li>
-            <li><a class="header_list_button" href="">Оплата и доставка</a></li>
-            <li><a class="header_list_button" href="">Новости</a></li>
-            <li><a class="header_list_button" href="">Контакты</a></li>
-        </ul>
-        <ul class="header_cabinet_container">
-            <li><a class="header_list_button">
-                <img src="../../../static/img/cabinet_logo.png" alt="">
-            </a></li>
-            <li><a class="header_list_button">Личный кабинет</a></li>
-        </ul>
-    </div>
-</header>
-
-<nav class="sidebar">
-    <ul class="sidebar_menu">
-        <li><a class="sidebar_button" href="">Каталог</a></li>
-        <li><a class="sidebar_button" href="https://vahin-shop.com/product-category/новинки/">Новинки</a></li>
-        <li><a class="sidebar_button"
-               href="https://vahin-shop.com/product-category/военная-миниатюра-54-60мм-1-32/">Военная миниатюра
-            54-60мм</a>
-            <ul class="sidebar_menu_hidden">
-                <li><a href="https://vahin-shop.com/product-category/военная-миниатюра-54-60мм-1-32/пешие-наборы/">Пешие
-                    наборы</a></li>
-                <li><a
-                        href="https://vahin-shop.com/product-category/военная-миниатюра-54-60мм-1-32/конные-фигуры/">Лошади</a>
-                </li>
-                <li><a href="https://vahin-shop.com/product-category/лошади-для-всадников-54-60мм/">Всадники</a>
-                </li>
+    <header>
+        <div class="header">
+            <ul class="header_list_container">
+                <li><a class="header_list_button" href="">Оплата и доставка</a></li>
+                <li><a class="header_list_button" href="">Контакты</a></li>
             </ul>
-        </li>
-        <li><a class="sidebar_button" href="https://vahin-shop.com/product-category/фигуры-42-45мм/">Миниатюра
-            42-45мм</a>
-            <ul class="sidebar_menu_hidden">
-                <li><a
-                        href="https://vahin-shop.com/product-category/фигуры-42-45мм/лошади-и-динозавры-под-42-45мм/">Лошади
-                    и динозавры</a></li>
-                <li><a
-                        href="https://vahin-shop.com/product-category/фигуры-42-45мм/конные-фигуры-42-45мм/">Всадники</a>
-                </li>
+            <a href="{% url 'shop:product_list' %}" class="header_logo">
+                <img src="../../../static/img/Logo.jpg" alt="Логотип сайта" width="240" height="60">
+            </a>
+            <ul class="header_cabinet_container">
+                {% if user.is_authenticated %}
+                <li><a class="header_list_button" href="{% url 'users:reg' %}">Личный кабинет</a></li>
+                <li><a class="header_list_button" href="{% url 'users:exit' %}">Выход</a></li>
+                {% else %}
+                <li><a class="header_list_button" href="{% url 'users:reg' %}">Регистрация</a></li>
+                <li><a class="header_list_button" href="{% url 'users:login' %}">Вход</a></li>
+                {% endif %}
             </ul>
-        </li>
-        <li><a class="sidebar_button" href="https://vahin-shop.com/product-category/non/">Снятые с
-            производства</a></li>
-        <div class="sidebar_search_container">
-            <div class="sidebar_search">
-                <input class="sidebar_input" type="text" placeholder="Поиск">
-                <button class="sidebar_search_button" type="submit"></button>
+        </div>
+    </header>
+
+    <!-- {% block slider_container %}slider_container{% endblock %} -->
+
+    {% block content %}content{% endblock %}
+
+    <div class="footer">
+        <div class="footer_container">
+            <div class="footer_contact">
+                <a href="mailto:i.voxin@yandex.ru">Почта для связи: тык</a>
+                <a href="tg://resolve?domain=vahin_shop">Телеграм: тык</a>
+            </div>
+            <div class="footer_law">
+                <p>Вся представленная продукция сувенирная и не является игрушкой! © ИП Вахин (16+) (2023)</p>
             </div>
         </div>
-
-        <div class="sidebar_card">
-            <div class="sidebar_cart">
-                <img src="../../../static/img/cart.png" alt="Корзина">
-            </div>
-            <div class="sidebar_card_container">
-                <div class="sidebar_cart_basket">0 р.</div>
-                <div class="sidebar_cart_order">Оформить заказ</div>
-            </div>
-        </div>
-
-    </ul>
-
-</nav>
-
-<!-- {% block slider_container %}slider_container{% endblock %} -->
-
-{% block content %}content{% endblock %}
-
-<div class="description">
-    <h1>Военная миниатюра "Vahin-shop"</h1>
-    <p>Слайдеры (ротаторы контента[изображений, текста, видео]) присутствуют в каждом проекте. В интернете,
-        реально,
-        куча проектов, где можно скачать и подобрать по своему вкусу практически любой плагин слайдера. Однако,
-        бывают ситуации, когда подключать к проекту слайдер, минимизированная версия которого весит от 10Кб —
-        нецелесообразно.</p>
-</div>
-
-<div class="footer">
-    <div class="footer_container">
-        <div class="footer_contact">
-            <a href="mailto:i.voxin@yandex.ru">Почта для связи: i.voxin@yandex.ru</a>
-            <p>Телеграм:</p>
-            <a href="tg://resolve?domain=vahin_shop"><img src="../../../static/img/telegram.png" alt=""></a>
-        </div>
-        <p>Вся представленная продукция сувенирная и не является игрушкой!
-            © ИП Вахин (16+) (2022)
-        </p>
     </div>
-</div>
 
-<script defer src="{% static 'js/counter.js' %}"></script>
-<script defer src="{% static 'js/main.js' %}"></script>
+    <script defer src="{% static 'js/counter.js' %}"></script>
+    <script defer src="{% static 'js/main.js' %}"></script>
 </body>

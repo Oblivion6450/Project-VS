@@ -1,5 +1,5 @@
-const myInput = document.getElementById("amountCounter");
-function counter(btn){
+function counter(btn,product_id){
+    const myInput = document.getElementById("amountCounter_"+product_id);
     let id = btn.getAttribute("id");
     let min = myInput.getAttribute("min");
     let max = myInput.getAttribute("max");

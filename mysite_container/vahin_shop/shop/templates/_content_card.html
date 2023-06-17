@@ -1,0 +1,45 @@
+{% load shop_tags %}
+<div class="content">
+    <nav class="navbar_container">
+        <ul class="navbar_menu">
+            <p>Категории</p>
+            {% get_categories as categories %}
+            {% for item in categories %}
+            <li>
+                <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <div class="card_container">
+        {% for item in shop %}
+        <div class="card_mini">
+            {% if item.img %}
+            <div class="card_mini_img"><a href="{{ item.get_absolute_url }}"><img src="{{ item.img.url }}" alt="Изображение товара" width="375" height="295"></a></div>
+            {% else %}
+            <div class="card_mini_img"><img src="../../../img/img/img_null.png" alt="" width="375" height="295"></div>
+            {% endif %}
+            <div class="card_mini_name"><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></div>
+            <div class="card_mini_category"><a href="{{ item.category.get_absolute_url }}">{{ item.category }}</a></div>
+            <div class="card_mini_status">{{ item.status }}</div>
+            <div class="card_mini_line"></div>
+            <div class="card_mini_purchase">
+                <div class="card_mini_price">{{ item.price }}₽</div>
+                <div class="card_mini_amount">
+                    <button id="minus" onclick="counter(this)"> - </button>
+                    <input type="number" min="1" max="10000" step="1" value="1" id="amountCounter">
+                    <button id="plus" onclick="counter(this)"> + </button>
+                </div>
+                <div class="card_mini_basket"><form action= "/cart/add/{{ item.id }}" method="post">
+                    {{ cart_shop_form }}
+                    {% csrf_token %}
+                    <button type="submit">В корзину</button>
+                </form></div>
+            </div>
+        </div>
+        {% empty %}
+        Неполучилось...
+        {% endfor %}
+    </div>
+</div>
