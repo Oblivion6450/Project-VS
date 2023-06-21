@@ -1,4 +1,6 @@
 function fetchData(id) {
+    const button=document.getElementById(id);
+    button.style.backgroundColor='#32CD32';
     const myInput = document.getElementById("amountCounter_"+id);
     res_request = {
         quantity: myInput.value,
@@ -13,7 +15,7 @@ function fetchData(id) {
         data: res_request,
         success: function (data) {
             console.log('data')
-            window.location.href = 'cart';
+            location.reload()
         }
     });
 }

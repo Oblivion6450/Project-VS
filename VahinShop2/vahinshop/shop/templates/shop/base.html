@@ -20,8 +20,7 @@
     <header>
         <div class="header">
             <ul class="header_list_container">
-                <li><a class="header_list_button" href="">Оплата и доставка</a></li>
-                <li><a class="header_list_button" href="">Контакты</a></li>
+                <li><a class="header_list_button" href="{% url 'shop:about' %}">Оплата|Доставка|Контакты</a></li>
             </ul>
             <a href="{% url 'shop:product_list' %}" class="header_logo">
                 <img src="../../../static/img/Logo.jpg" alt="Логотип сайта" width="240" height="60">
